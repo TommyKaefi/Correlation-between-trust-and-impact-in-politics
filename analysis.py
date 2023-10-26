@@ -30,8 +30,6 @@ for col1 in columns_q1:
         chi2_matrix.at[col1, col2] = p
 chi2_matrix = chi2_matrix.astype(float)
 
-#
-
 # Apply SymLogNorm normalization
 norm = LogNorm(vmin=chi2_matrix.min().min(), vmax=chi2_matrix.max().max())
 
