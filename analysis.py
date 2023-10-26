@@ -26,9 +26,7 @@ for col1 in columns_q1:
         contingency = pd.crosstab(df1[col1], df2[col2])
         chi2, p, _, _ = chi2_contingency(contingency)
         chi2_matrix.at[col1, col2] = chi2
-        p_value_matrix.at[col1, col2] = p
 chi2_matrix = chi2_matrix.astype(float)
-p_value_matrix = p_value_matrix.astype(float)
 
 
 # Plot the chi2 matrix
@@ -38,5 +36,6 @@ ax.set_title('Chi-square Test Results Matrix')
 ax.set_xlabel('Q19')
 ax.set_ylabel('Q16', rotation=0, labelpad=40)
 ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
+
 
 plt.show()
