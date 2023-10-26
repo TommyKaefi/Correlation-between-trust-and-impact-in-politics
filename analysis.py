@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 from scipy.stats import chi2_contingency
 
 # Read the data
-df1 = pd.read_csv('/Users/tomkafer/Desktop/Q16.csv', delimiter=';')
-df2 = pd.read_csv('/Users/tomkafer/Desktop/Q19.csv', delimiter=';')
+df1 = pd.read_csv('/Q16.csv', delimiter=';')
+df2 = pd.read_csv('/Q19.csv', delimiter=';')
 
 # Filtering out error values
 valid_range = set(range(1, 7)) # 1-5 and 6 for "no opinion"
@@ -43,13 +43,6 @@ for col1 in columns_q1:
 chi2_matrix = chi2_matrix.astype(float)
 p_value_matrix = p_value_matrix.astype(float)
 
-# Plot the correlation matrix
-fig, ax = plt.subplots(figsize=(10, 8))
-sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1, ax=ax)
-ax.set_title('Spearman Correlation Matrix')
-ax.set_xlabel('Q19')
-ax.set_ylabel('Q16', rotation=0, labelpad=40)
-ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
 
 # Plot the chi2 matrix
 fig, ax = plt.subplots(figsize=(10, 8))
@@ -59,12 +52,5 @@ ax.set_xlabel('Q19')
 ax.set_ylabel('Q16', rotation=0, labelpad=40)
 ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
 
-# Plot the p-value matrix
-fig, ax = plt.subplots(figsize=(10, 8))
-sns.heatmap(p_value_matrix, annot=True, cmap='Greens', fmt='.2g', ax=ax)
-ax.set_title('p-value Matrix')
-ax.set_xlabel('Q19')
-ax.set_ylabel('Q16', rotation=0, labelpad=40)
-ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
 
 plt.show()
