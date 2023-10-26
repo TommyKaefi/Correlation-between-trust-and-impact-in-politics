@@ -5,8 +5,8 @@ from scipy.stats import chi2_contingency
 from matplotlib.colors import LogNorm
 
 # Read the data
-df1 = pd.read_csv('/Users/tomkafer/Desktop/Q16.csv', delimiter=';')
-df2 = pd.read_csv('/Users/tomkafer/Desktop/Q19.csv', delimiter=';')
+df1 = pd.read_csv('/Q16.csv', delimiter=';')
+df2 = pd.read_csv('/Q19.csv', delimiter=';')
 
 # Filtering out error values
 valid_range = set(range(1, 7)) # 1-5 and 6 for "no opinion"
