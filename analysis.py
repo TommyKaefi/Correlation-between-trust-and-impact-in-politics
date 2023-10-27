@@ -63,6 +63,7 @@ for col1 in columns_q1:
         ax.set_ylabel('Q16', rotation=0, labelpad=40)
         ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
         print(contingency)
+        print('-----------')
         plt.show()
 
         chi2, p, _, _ = chi2_contingency(contingency, correction=True)
