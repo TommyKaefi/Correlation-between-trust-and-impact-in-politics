@@ -17,6 +17,8 @@ pip install seaborn
 pip install matplotlib
 # scipy.stats
 pip install scipy
+# numpy
+pip install numpy
 
 Make sure you're in the right environment (e.g., virtual environment) when you execute these commands, especially if you're working with multiple Python environments or projects.
 
